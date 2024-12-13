@@ -122,3 +122,98 @@ func exercicio8() {
 		}
 	}
 }
+
+type pessoa_Sorvete struct {
+	nome            string
+	sobrenome       string
+	sabores_sorvete []string
+}
+
+func exercicio9() {
+
+	fmt.Println("Exercicio 9 \n")
+
+	pessoa1 := pessoa_Sorvete{
+		nome:            "Guilherme",
+		sobrenome:       "Sousa",
+		sabores_sorvete: []string{"Baunilha", "Chocoloate", "Morango", "Napoliano"},
+	}
+
+	pessoa2 := pessoa_Sorvete{
+		nome:            "Pedro",
+		sobrenome:       "Soares",
+		sabores_sorvete: []string{"Abacaxi", "Menta", "Romeu e Julieta", "Morango"},
+	}
+
+	fmt.Println(pessoa1.nome)
+	for _, v := range pessoa1.sabores_sorvete {
+		fmt.Println("\t", v)
+	}
+	fmt.Println("")
+	fmt.Println(pessoa2.nome)
+	for _, v := range pessoa2.sabores_sorvete {
+		fmt.Println("\t", v)
+	}
+	fmt.Println("Exercicio 10 \n")
+
+	mapa := make(map[string]pessoa_Sorvete)
+
+	mapa["Guilherme"] = pessoa_Sorvete{
+		nome:            "Guilherme",
+		sobrenome:       "Sousa",
+		sabores_sorvete: []string{"Baunilha", "Chocoloate", "Morango", "Napoliano"}}
+
+	mapa["Pedro"] = pessoa_Sorvete{
+		nome:            "Pedro",
+		sobrenome:       "Soares",
+		sabores_sorvete: []string{"Abacaxi", "Menta", "Romeu e Julieta", "Morango"}}
+
+	for _, v := range mapa {
+		fmt.Println("\t", v)
+		for _, v := range v.sabores_sorvete {
+			fmt.Println("\t", v)
+		}
+	}
+}
+
+type veiculo struct {
+	portas int
+	cor    string
+}
+
+type camionete struct {
+	veiculo
+	tracaoNasQuatro bool
+}
+
+type sedan struct {
+	veiculo
+	modeloLuxo bool
+}
+
+func exercicio10() {
+	fmt.Println("Exercicio 10 \n")
+
+	carro1 := sedan{veiculo{4, "preto"}, true}
+	carro2 := camionete{veiculo{4, "azul"}, true}
+
+	fmt.Println(carro1)
+	fmt.Println(carro2)
+
+	fmt.Println("Exercicio 11 \n")
+
+	restaurante := struct {
+		mesas    int
+		cardapio []string
+		preços   map[string]int
+	}{
+		mesas:    10,
+		cardapio: []string{"Carne a bolonhesa", "batata recheada", "arroz a grega", "vinho tinto", "..."},
+		preços: map[string]int{
+			"Mesa para dois": 150,
+			"Mesa comum":     200,
+			"Mesa familia":   300,
+		},
+	}
+	fmt.Println(restaurante)
+}

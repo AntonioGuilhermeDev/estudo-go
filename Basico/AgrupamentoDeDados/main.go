@@ -17,4 +17,10 @@ func main() {
 	exercicio6()
 	exercicio7()
 	exercicio8()
+	exercicio9()
+	exercicio10()
+	meuStruct()
+	structEmbutido()
+	structAnonimo()
+
 }
